@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Papaya.com`,
+    title: `RealMelon`,
     author: {
       name: `Tarun Nagpal`,
       summary: `who lives and works in Chandigarh (India) building useful things.`,
