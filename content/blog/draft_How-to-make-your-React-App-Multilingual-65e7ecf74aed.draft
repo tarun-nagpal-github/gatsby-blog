@@ -1,0 +1,34 @@
+---
+title: How to make your React App Multilingual
+description: 'Hey Readers,'
+date: ''
+categories: []
+keywords: []
+slug: ''
+---
+
+  
+
+Hey Readers,
+
+  
+
+I came to a situation where I had to make my existing App Multilingual.
+
+I was surprised to see, it is very quick and super easy to achieve. You can make your fresh App Multilingual in easy steps.
+
+Step -1 —  Setup a Create-react-app
+
+```
+npx create-react-app my-appcd my-appnpm start
+```
+
+  
+
+Step — 2 Install package
+
+  
+
+Step-3 Make a locale folder with 2 different language files 
+
+Step- 4 Test your App with an User event.

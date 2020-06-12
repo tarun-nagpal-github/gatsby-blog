@@ -1,0 +1,20 @@
+---
+title: 'Hi Gurinder Singh Shergill,'
+description: >-
+  Thanks for reading. Actually, in this example I tried to explain like how we
+  can create private method.
+date: '2018-06-28T07:18:09.686Z'
+categories: []
+keywords: []
+slug: /@tarunnagpal78/hi-gurinder-singh-shergill-17f5db90d786
+---
+
+Hi [Gurinder Singh Shergill](https://medium.com/u/bc781831e464),
+
+Thanks for reading. Actually, in this example I tried to explain like how we can create private method.
+
+To elaborate more, I have added a use case as well.
+
+Basically, We can call the private methods from public methods and use them as a utility/private-data function.
+
+Please see now and kindly tell me if I am able to answer or not :) :)
