@@ -58,9 +58,9 @@ redux — The base package
 react-redux — Package to use the Redux features according to React
 
 **Install the npm Packages**
-
+```
 npm install redux react-redux redux-saga
-
+```
 ### **Redux Folder Structure**
 
 Create a Folder named Redux in src which contains the following folders
@@ -121,17 +121,17 @@ The `<Provider />` makes the Redux store available to any nested components that
 </Provider>
 
 **Get the Global State into your App**
-
+```
 import { useSelector } from “react-redux”;
 
 const globalState = useSelector(state => state);
-
+```
 **Dispatch the Action on Event**
-
+```
 const getUserData = () => {  
  // Get the Data for the User  
  dispatch({ type: “USER\_FETCH\_REQUESTED”})  
-}
+}```
 
 **Attach An API Call to the Action**
 ```
@@ -165,7 +165,6 @@ export default mySaga;
 
 Your final app.js will look like this.
 
-FInal APP.js file
 ```
 import React from 'react';
 import './App.css';
@@ -198,9 +197,7 @@ export default App;
 ```
 **Run the Code and See the Action**
 
-Open
-
-localhost:3000/
+Open http://localhost:3000/
 
 **Working Example**
 
@@ -218,6 +215,12 @@ CodeSandBox
 
 ### **Conclusion**
 
+State Management is an very important aspect of React. 
+
+Redux is a library that handles the State in an organized one way manner. 
+
+It provides a Global Store to handle all state changes to the APP.
+
 In this post, we have picked a fresh React app and implemented Redux with a sample action.
 
-I have just set up one, but you can expand it and use it in your project. Feel free to ask for any help in comments.
+I have just set up the basic things, but you can expand it or directly use your project.
