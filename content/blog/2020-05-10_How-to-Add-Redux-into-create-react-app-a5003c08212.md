@@ -4,8 +4,8 @@ description: >-
   Redux is the most popular State container Library. It helps you manage your
   state in a predictable and easy way.
 date: '2020-05-10T09:06:47.494Z'
-categories: []
-keywords: []
+categories: ['react', 'redux']
+keywords: ['redux', 'reactJs', 'state-management']
 slug: /@tarunnagpal78/how-to-add-redux-into-create-react-app-a5003c08212
 ---
 
@@ -74,7 +74,7 @@ APP — Foder Structure
 ### **Import the Libraries**
 
 In the index.js, include the following dependencies
-
+```
 // Redux Library Packages  
  import { Provider } from “react-redux”;  
  import createSagaMiddleware from ‘redux-saga’;  
@@ -107,13 +107,13 @@ const globalReducer = createStore(
  compose(   
  applyMiddleware(sagaMiddleware, logger)  
  ));
-
+```
 The `<Provider />` makes the Redux store available to any nested components that are using the `useSelector` hook.
-
+```
  <Provider >  
    <App />  
  </Provider>
-
+```
 **Attach the Reducers to the providers**
 
 <Provider store={globalReducer}>  
@@ -134,7 +134,7 @@ const getUserData = () => {
 }
 
 **Attach An API Call to the Action**
-
+```
 import { call, put, takeLatest } from ‘redux-saga/effects’  
   
 const getRecords = (uid = null) => {  
@@ -158,7 +158,7 @@ function\* mySaga() {
 }
 
 export default mySaga;
-
+```
 **Run the Code and See the Action**
 
 **Final app.js file**
@@ -166,7 +166,36 @@ export default mySaga;
 Your final app.js will look like this.
 
 FInal APP.js file
+```
+import React from 'react';
+import './App.css';
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
+function App() {
+  const globalState = useSelector(state => state);
+  const dispatch = useDispatch();
+  const getUserData = () => {
+    // Get the Data for the User
+    dispatch({ type: "USER_FETCH_REQUESTED"})
+  }
+  return (
+    <div className="App">
+      <header className="App-header">
+       {/* Action will be triggred on clicked */}
+      <button onClick={getUserData} style={{fontSize: '20px'}}>Click here to Get Data</button> 
+      &nbsp;&nbsp;&nbsp;
+    <h1>Hello Redux</h1> 
+    <pre style={{fontSize: 20}}>
+        {JSON.stringify(globalState.userReducer, null, 2)}
+    </pre>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
 **Run the Code and See the Action**
 
 Open
