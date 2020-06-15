@@ -131,8 +131,8 @@ const globalState = useSelector(state => state);
 const getUserData = () => {  
  // Get the Data for the User  
  dispatch({ type: “USER\_FETCH\_REQUESTED”})  
-}```
-
+}
+```
 **Attach An API Call to the Action**
 ```
 import { call, put, takeLatest } from ‘redux-saga/effects’  
@@ -159,7 +159,6 @@ function\* mySaga() {
 
 export default mySaga;
 ```
-**Run the Code and See the Action**
 
 **Final app.js file**
 
