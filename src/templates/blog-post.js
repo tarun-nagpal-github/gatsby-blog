@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import HyvorTalk from 'hyvor-talk-react'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -46,6 +47,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <footer>
           <Bio />
         </footer>
+        <HyvorTalk.Embed websiteId={965} />
       </article>
 
       <nav>
