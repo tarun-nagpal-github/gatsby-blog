@@ -74,8 +74,65 @@ Protected Route is a HOC ([High Order Component](https://reactjs.org/docs/higher
 People from angular World can see this as a [Route Guard](https://angular.io/api/router/CanActivate)
 
 You can see the example of a Protected HOC below.
+```
+import React from "react";
+import { Route } from "react-router-dom";
+import { Redirect } from "react-router";
+import { connect } from "react-redux";
 
-`gist:weirdpattern/ce54fdb1e5621b5966e146026995b974#syntax.text`
+const checkPageAccess = (path, permittedPages) => {  
+  let isUserAuthorised = false;  
+  let url = path.replace(/\//g, "");  
+  let allowedActions = [];
+  let allowedActionsName = [];
+
+  // If permittedPages exists
+  if( Array.isArray(permittedPages) && permittedPages.length > 0) {    
+    isUserAuthorised = permittedPages.find(page => page.modulePageUrl === url);  
+    permittedPages.forEach(element => {      
+      // If Url exists
+      if(element.modulePageUrl === url){        
+        // If Action exists
+        if(( Array.isArray(element.actions) && element.actions.length > 0)){
+          // Prepare Action List
+          element.actions.forEach(item => {   
+            allowedActionsName.push(item.actionUrl);
+          });
+        }
+      }
+    });
+  }  
+  return {
+    isUserAuthorised,
+    allowedActionsName
+  };
+};
+
+const _ProtectedRoute = props => {  
+  const { component: Component, path, permittedPages, stateOfuser, ...rest } = props;
+  const checkAccess = checkPageAccess(path, permittedPages); 
+  //prettier-ignore
+  return <Route
+    {...rest}
+    render={props =>
+      ((checkAccess.isUserAuthorised == false || typeof checkAccess.isUserAuthorised == 'undefined') &&  stateOfuser.loginSuccess )  ? 
+      (<Redirect to={{pathname: "/un-authorised"}}/>)  : 
+      (<Component {...props} actions={checkAccess.allowedActionsName} />)
+    }
+    />
+};
+
+// get pages from redux Store
+const ProtectedRoute = connect(state => ({
+  permittedPages: state.getPermittedPagesReducer.permittedPages,
+  stateOfuser: state.user,
+}))(_ProtectedRoute);
+
+export default ProtectedRoute;
+
+```
+
+`gist:tarun-nagpal-github/e61d65bfcf3885c0306c6624f5eb64fa#ProtectedRoute.js`
 
 
 <ProtectedRoute path=”/users-list” component={UserList} />
@@ -116,14 +173,143 @@ RBAC — Flow Diagram
 
 This Section is responsible for fetching the allowed modules/pages/actions.
 
-You will get the following response from the API (get-allowed-pages.json).
-
+You will get the following response from the API (
+owed-pages.json).
+```
+{
+   "data":{
+      "user":{
+         "firstName":"Super",
+         "lastName":"Admin",
+         "email":"john@yahoo.com",
+         "userModulePages":[
+            {
+               "modulePage":"Role",
+               "modulePageUrl":"user-roles-list",
+               "moduleId":4,
+               "moduleName":"Administration",
+               "modulePageId":2,
+               "actions":[
+                  {
+                     "actionId":2,
+                     "actionUrl":"create-role",
+                     "action":"Create Role",
+                     "roleIsActive":true
+                  },
+                  {
+                     "actionId":2,
+                     "actionUrl":"delete-role",
+                     "action":"Delete Role",
+                     "roleIsActive":true
+                  }
+               ]
+            },
+            {
+               "modulePage":"User",
+               "modulePageUrl":"create-user",
+               "moduleId":4,
+               "moduleName":"Administration",
+               "modulePageId":3,
+               "actions":[
+                  {
+                     "actionId":1,
+                     "actionUrl":"create-user",
+                     "action":"create-user",
+                     "roleIsActive":true
+                  }
+               ]
+            },
+            {
+               "modulePage":"Permissions",
+               "modulePageUrl":"create-permissions",
+               "moduleId":4,
+               "moduleName":"Administration",
+               "modulePageId":11,
+               "actions":[
+                  {
+                     "actionId":32,
+                     "actionUrl":"create-permissions",
+                     "action":"create-permissions",
+                     "roleIsActive":true
+                  }
+               ]
+            }
+         ]
+      }
+   }
+}
+```
 You can check the access of the pages
 
+```
+const checkPageAccess = (path, permittedPages) => {  
+  let isUserAuthorised = false;  
+  let url = path.replace(/\//g, "");  
+  let allowedActions = [];
+  let allowedActionsName = [];
+
+  // If permittedPages exists
+  if( Array.isArray(permittedPages) && permittedPages.length > 0) {    
+    isUserAuthorised = permittedPages.find(page => page.modulePageUrl === url);  
+    permittedPages.forEach(element => {      
+      // If Url exists
+      if(element.modulePageUrl === url){        
+        // If Action exists
+        if(( Array.isArray(element.actions) && element.actions.length > 0)){
+          // Prepare Action List
+          element.actions.forEach(item => {   
+            allowedActionsName.push(item.actionUrl);
+          });
+        }
+      }
+    });
+  }  
+  return {
+    isUserAuthorised,
+    allowedActionsName
+  };
+};
+```
 The value _allowedActionsName_ will be passed as props
+
+```
+const _ProtectedRoute = props => {  
+  const { component: Component, path, permittedPages, stateOfuser, ...rest } = props;
+  const checkAccess = checkPageAccess(path, permittedPages); 
+  //prettier-ignore
+  return <Route
+    {...rest}
+    render={props =>
+      ((checkAccess.isUserAuthorised == false || typeof checkAccess.isUserAuthorised == 'undefined') &&  stateOfuser.loginSuccess )  ? 
+      (<Redirect to={{pathname: "/un-authorised"}}/>)  : 
+      (<Component {...props} actions={checkAccess.allowedActionsName} />)
+    }
+    />
+};
+```
 
 4\. Integrate Actions with HTML/React Elements
 
 Now finally you will get the actions on every component based on the page-URL. You can bind them directly with the HTML elements.
 
 Example — If User is allowed to delete record, then only the button will be enabled.
+
+```
+ render(){
+ 
+ return (
+      <div className="buttonContainer">
+        // Button will only be displayed If Allowed Condition is True
+        {this.isActionAllowed('delete-record') &&
+          <button
+            type="button"
+            className="btn btn-secondary mt-3 ml-2"
+            onClick={this.closeReceiver}            
+          >
+            Delete Record
+          </button>
+        } 
+      </div>
+    );
+ }
+```
