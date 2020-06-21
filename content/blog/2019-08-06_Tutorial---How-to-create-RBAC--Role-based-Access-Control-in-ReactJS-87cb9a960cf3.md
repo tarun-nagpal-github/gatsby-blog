@@ -75,6 +75,9 @@ People from angular World can see this as a [Route Guard](https://angular.io/api
 
 You can see the example of a Protected HOC below.
 
+`gist:weirdpattern/ce54fdb1e5621b5966e146026995b974#syntax.text`
+
+
 <ProtectedRoute path=”/users-list” component={UserList} />
 
 **3\. Integrate RBAC**
