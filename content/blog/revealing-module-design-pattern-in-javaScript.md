@@ -33,3 +33,47 @@ This is a calculator class which is having the following methods.
 4\. divide() // public function
 
 We can manipulate the operations with passing variables in constructor and getting the results accordingly.
+
+```
+/**
+ * 
+ * @param {number} x 
+ * @param {number} y 
+ * 
+ * @returns function
+ */
+var Calculator = (function(){
+    var _privateVariable = 100;
+    
+    //Private function 
+    function _privateFunction(x, y){
+        return (x*x) + (y *y);
+    }
+    function sum(x, y){
+        return x + y;
+    }
+    function mul(x, y){
+        return x * y;
+    }
+    function divide(x, y){
+        return x / y;
+    }
+    function square(x, y) {     
+        return _privateFunction(x, y);
+    }
+    // functions are revelied here
+    return {
+        sum : sum,
+        mul : mul,
+        divide : divide,
+        square: square
+    }
+})();
+
+var cal = Calculator;
+console.log(cal.sum(2,3));
+console.log(cal.mul(2,3));
+console.log(cal.divide(2,3));
+console.log(cal.square(2,3));
+
+```
