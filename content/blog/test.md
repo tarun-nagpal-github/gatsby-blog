@@ -10,6 +10,11 @@ keywords: []
 
 ## SOLID Principles
 
+
+Developing a robust and scalable application is the ultimalte goal of a programmer. In order to achive this with best possible way we need SOLID Principals. There provide a smarter and efficent way to write code.
+
+No matter which language you choose to write the code, these will guide you to write the code which can be more modular/testable/maitainable.
+
 Firstly introduced by **Robert C. Martin** aka **Uncle Bob**. These principles are also referred to as the “First Five Object Oriented Design Principles”. We can write **maintainable**, **extendable **and **testable **code using these principles.
 
 ### S — Single Responsibility Principle:
@@ -307,7 +312,11 @@ Here the calling class will itself provide the dependencies to the Phone. This i
 ## Conclusion:
 
 **S (Single Responsibility Principle)** where each class has single responsibility to manage.
+
 **O (Open Closed Principle)** where we can introduce new code/changes without modifying the existing code.
+
 **L (Liskov Substitution Principle)** where a method that takes X as a parameter must be able to work with any subclass of X
+
 **I (Interface Segregation Principle)** which states that complex interfaces should be split into multiple smaller interfaces.
+
 **D (Dependency Inversion Principle)** which states that no class should have any hidden dependency, but the calling class creates the dependency instead.
