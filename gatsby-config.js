@@ -3,10 +3,11 @@ module.exports = {
     title: `RealMelon`,
     author: {
       name: `Tarun Nagpal`,
-      summary: `who lives and works in Chandigarh (India) building useful things.`,
+      summary: `who loves JavaScript and try to make web a better place for information`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `RealMelon - A place which can help you read about the latest trends in technology and travel. 
+    We share the content based on our experience and uses. You will finds topic like JavaScript, react, html, redux and much more.`,
+    siteUrl: `https://realmelon.com/`,
     social: {
       twitter: `tarunnagpal78`,
     },
