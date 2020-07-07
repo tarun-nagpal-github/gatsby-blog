@@ -7,6 +7,9 @@ keywords: []
 # slug: /@tarunnagpal78/asynchronous-javascript-and-event-loop-d59c7e4b9fdd
 ---
 
+![](https://images.pexels.com/photos/3707673/pexels-photo-3707673.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
+
+
 
 ## SOLID Principles
 
