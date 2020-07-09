@@ -323,3 +323,7 @@ Here the calling class will itself provide the dependencies to the Phone. This i
 **I (Interface Segregation Principle)** which states that complex interfaces should be split into multiple smaller interfaces.
 
 **D (Dependency Inversion Principle)** which states that no class should have any hidden dependency, but the calling class creates the dependency instead.
+
+## About the Author:
+
+Anmol Sehgal - He is very passionate about technology and writes blogs about technology, You can find more about him here (https://www.linkedin.com/in/anmol1410/)
