@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
         <footer>
-          <Bio />
+         // <Bio />
         </footer>
         <HyvorTalk.Embed websiteId={965} />
       </article>
