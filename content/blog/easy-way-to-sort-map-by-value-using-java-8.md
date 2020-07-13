@@ -32,3 +32,9 @@ Code is clean and one liner to sort the map by values, not keys.
 You can download and run the complete code by downloading from my github link [https://github.com/kavitagupta972/MyWork/blob/master/Sorting%20Map.zip](https://github.com/kavitagupta972/MyWork/blob/master/Sorting%20Map.zip)
 
 Hope you find this article helpful. For more java 8 features, stay tuned….
+
+
+## About the Author:
+
+Kavita Gupta - She is very passionate about technology and writes blogs about technology, You can find more about her here (https://www.linkedin.com/in/kavita-gupta-8026425b/)
+
