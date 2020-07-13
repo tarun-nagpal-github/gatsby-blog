@@ -1,3 +1,12 @@
+---
+title: Easy way to sort map by value using java 8 
+description: 'Need to do sorting based on values in hashmap. I try to search easy way to achieve that, and found the api in java to do this job.'
+date: '2019-08-04T08:06:46.769Z'
+categories: []
+keywords: []
+# slug: /@tarunnagpal78/asynchronous-javascript-and-event-loop-d59c7e4b9fdd
+---
+
 >  Easy way to sort map by value using java 8
 
 ![](https://cdn-images-1.medium.com/max/2000/1*LvaZgwWrDH-Hl7glzlHgaw.jpeg)
