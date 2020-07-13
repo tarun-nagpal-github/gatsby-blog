@@ -44,9 +44,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        /*<footer>
-          <Bio />
-        </footer> */
+        <footer>
+          {/*  <Bio /> */}
+        </footer> 
         <HyvorTalk.Embed websiteId={965} />
       </article>
 
