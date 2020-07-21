@@ -13,25 +13,40 @@ module.exports = {
     },
   },
   plugins: [
+    // {
+    //   resolve: "gatsby-transformer-remark",
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: "gatsby-remark-embed-gist",
+    //         options: {
+    //           // Optional:
+     
+    //           // the github handler whose gists are to be accessed
+    //           username: 'tarun-nagpal-github',
+     
+    //           // a flag indicating whether the github default gist css should be included or not
+    //           // default: true
+    //           includeDefaultCss: true
+    //         }
+    //       }
+    //     ]
+    //   }
+    // },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-embed-gist",
-            options: {
-              // Optional:
-     
-              // the github handler whose gists are to be accessed
-              username: 'tarun-nagpal-github',
-     
-              // a flag indicating whether the github default gist css should be included or not
-              // default: true
-              includeDefaultCss: true
-            }
-          }
-        ]
-      }
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {},
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

@@ -567,3 +567,18 @@ For the sake of modularity (pun intended), I will cover them in the next article
 Thank you for reading. If you feel, this article can help someone to understand some important features, feel free to comment below 😃
 
 ### **Happy JavaScripting**
+
+```jsx
+import React from "react"
+import ReactDOM from "react-dom"
+
+const name = "Brian" // highlight-line
+
+ReactDOM.render(
+  <div>
+    {/* highlight-range{1-3} */}
+    <h1>Hello, ${name}!</h1>
+  </div>,
+  document.getElementById("root")
+)
+```
