@@ -8,8 +8,6 @@ keywords: []
 ---
 
 
-## JavaScript essentials for React developers
-
 As we are using new frameworks like React/Vue/Angular, it is very important to understand some of the basics of JavaScript.
 
 
@@ -26,9 +24,7 @@ Author have tried to make them dead simple to understand but if you find anythin
 Gurinder SherGill - He is expert in JavaScript and tries to share whatever he can. You can find more about him here (https://www.linkedin.com/in/gurinder-shergill/)
 
 
-### JavaScript is getting stronger day by day.
-
-There are some very powerful features in JavaScript that every React developer should know. Lets get started to discuss these features.
+## Lets get started to discuss these features.
 
 ## Variable Declaration
 
@@ -130,8 +126,6 @@ All three keywords are used to declare a variable. So what is the difference ? L
 So, we should use let over var to not pollute other blocks. But it needs to be used with care, because sometimes we need variables outside the blocks, too.We have a habit to declare with ***var ***which serves the purposes outside block but*** let ***won’t***.***
 
 **const **is also very useful to avoid mistakenly re-assigning of constant variables. It will throw an error but won’t re-assign a variable.
-
-***Edit : **As pointed out by [Varun Dhamija](undefined) Sir, immutable is not the right word to use for **const. ***We can alter the values of reference variables like array and objects, but we can’t point to a new array or object if declared using const.
 
     const numbers = [1,2,3];*** 
     ***numbers.push(4);    //is totally fine.
@@ -570,12 +564,6 @@ Lets have an example of code in which we create a ***Classes Inheritance*** sect
 
 For the sake of modularity (pun intended), I will cover them in the next article. Stay tuned.
 
-Thank you for reading. If you feel, this article can help someone to understand some important features, feel free to share 😃
+Thank you for reading. If you feel, this article can help someone to understand some important features, feel free to comment below 😃
 
 ### **Happy JavaScripting**
-
-![](https://cdn-images-1.medium.com/max/2394/1*i3hPOj27LTt0ZPn5TQuhZg.png)
->  ✉️ *Subscribe to *CodeBurst’s *once-weekly [**Email Blast](http://bit.ly/codeburst-email), ***🐦 *Follow *CodeBurst* on [**Twitter](http://bit.ly/codeburst-twitter)**, view *🗺️ [***The 2018 Web Developer Roadmap](http://bit.ly/2018-web-dev-roadmap)**, and *🕸️ [***Learn Full Stack Web Development](http://bit.ly/learn-web-dev-codeburst)**.*
-
-
-
