@@ -2,8 +2,8 @@
 title: JavaScript basics for React developers 
 description: 'JavaScript is so vast and it becomes difficult to master everything. I have composed few points of JS (JavaScript) that will help you understand these frameworks like React easily..'
 date: '2020-04-04T08:06:46.769Z'
-categories: []
-keywords: []
+categories: ['react',   'javascript']
+keywords: ['react', 'javascript', 'javascript for react developers']
 # slug: /@tarunnagpal78/asynchronous-javascript-and-event-loop-d59c7e4b9fdd
 ---
 
@@ -30,23 +30,23 @@ Gurinder SherGill - He is expert in JavaScript and tries to share whatever he ca
 
 How do we declare a variable in JS ?
 
-using ***var ***? Yes, but now we have two more keywords — ***let ***and ***const.***
->  ***var ***vs ***let ***vs ***const***
+using **var**? Yes, but now we have two more keywords — let and const.
+>  var vs let vs const
 
 All three keywords are used to declare a variable. So what is the difference ? Lets see
 
-***var ***— Used to declare variables but the scope of variables is *function block*. If declared globally, scope is *global.*
+var — Used to declare variables but the scope of variables is *function block*. If declared globally, scope is *global.*
 
-***let ***— Used to declare variables but variables are block scoped. *What is block ?* Block can be defined as the area with in start curly brace( { ) and end curly brace ( } ).
+let — Used to declare variables but variables are block scoped. *What is block ?* Block can be defined as the area with in start curly brace( { ) and end curly brace ( } ).
 
-***const — ***Used to declare variables but variables can’t be reassigned. Declared variables are i̶m̶m̶u̶t̶a̶b̶l̶e̶ (*check edit ahead*) . const variables are also block scoped.
+const — Used to declare variables but variables can’t be reassigned. Declared variables are i̶m̶m̶u̶t̶a̶b̶l̶e̶ (*check edit ahead*) . const variables are also block scoped.
 
-***Lets see in example***
+Lets see in example
 ```js
-    ***/*Using var to declare variables*/***
+    /*Using var to declare variables*/
 
     function usingVar(){
-         for(***var ***i=0;i<2;i++){                     // var declaration
+         for(var i=0;i<2;i++){                     // var declaration
              console.log('In loop: '+ i);
          }
          console.log('After loop : '+ i);
@@ -59,10 +59,10 @@ All three keywords are used to declare a variable. So what is the difference ? L
     After loop: 2
     
 
-    ***/*Using let to declare variables*/***
+    /*Using let to declare variables*/
 
     function usingLet(){
-         for(***let ***i=0;i<2;i++){                     *// let declaration*
+         for(let i=0;i<2;i++){                     *// let declaration*
              console.log('In loop: '+ i);
          }
          console.log('After loop : '+ i);
@@ -75,7 +75,7 @@ All three keywords are used to declare a variable. So what is the difference ? L
     **Uncaught ReferenceError: i is not defined ** 
     */* i is not available outside 'for' block because it is declared using let keyword*/*
 
-    ***/*Using const to declare variables*/***
+    /*Using const to declare variables*/
 
     function usingConst(){
          const pie = 3.14;                         //const declaration
@@ -88,20 +88,20 @@ All three keywords are used to declare a variable. So what is the difference ? L
     **Output**:
     3.14
     **Uncaught TypeError: Assignment to constant variable
-    ***/* because we are try to re-assign pie which is declared using const */
+    /* because we are try to re-assign pie which is declared using const */
     *
 
-    ***/*Using all types of keywords to declare variables*/***
+    /*Using all types of keywords to declare variables*/
 
     function usingAll() {
-       ***const *myName **= "Gurinder";
-       ***var *myWebsite **= "medium.com";
+       const *myName **= "Gurinder";
+       var *myWebsite **= "medium.com";
            {                             //creating blocks for demo
-              ***const *myName **= "Shergill";
+              const *myName **= "Shergill";
               console.log(myName);
-              ***let*** **myWebsite** = "webegic.com"; 
+              let **myWebsite** = "webegic.com"; 
                    {
-                      ***let *myWebsite **= "gurindershergill.in";
+                      let *myWebsite **= "gurindershergill.in";
                       console.log(myWebsite);
                     }
                console.log(myWebsite);
@@ -123,12 +123,12 @@ All three keywords are used to declare a variable. So what is the difference ? L
     medium.com
     Gurinder
 
-So, we should use let over var to not pollute other blocks. But it needs to be used with care, because sometimes we need variables outside the blocks, too.We have a habit to declare with ***var ***which serves the purposes outside block but*** let ***won’t***.***
+So, we should use let over var to not pollute other blocks. But it needs to be used with care, because sometimes we need variables outside the blocks, too.We have a habit to declare with var which serves the purposes outside block but let won’t.
 
 **const **is also very useful to avoid mistakenly re-assigning of constant variables. It will throw an error but won’t re-assign a variable.
 ```js
-    const numbers = [1,2,3];*** 
-    ***numbers.push(4);    //is totally fine.
+    const numbers = [1,2,3]; 
+    numbers.push(4);    //is totally fine.
 
     /* But we can’t point to new array */
     numbers = [1,2,3,4];  //ERROR. We can't point to new array address.
@@ -139,9 +139,9 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 
 **Lets see how to create a class and create objects from a class**
 ```js
-    ***/*Defining Class*/***
+    /*Defining Class*/
 
-    ***class *ClassName **{
+    class *ClassName **{
 
             constructor(propertyValue){
                this.property = propertyValue;
@@ -155,24 +155,24 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 
     }
 
-    ***/* Creating objects from class */***
+    /* Creating objects from class */
 
     **let objName = new ClassName(propertyValue);**
 ```
 **Points to note:**
 
-* ***function ***keyword is not used to declare functions. We don’t need to have the word function for declaring methods.
+* function keyword is not used to declare functions. We don’t need to have the word function for declaring methods.
 
-* We can’t assign properties as we do in methods. We initialize them using a ***constructor ***method.
+* We can’t assign properties as we do in methods. We initialize them using a constructor method.
 
-* ***constructor ***method is a special method which is called on the creation of objects and used to initialize the class instance.
+* constructor method is a special method which is called on the creation of objects and used to initialize the class instance.
 
-* ***this ***will always point to the current object
+* this will always point to the current object
 
 **Lets have a look at an example**
 ```js
     **/*Class*/**
-    ***class *Vehicle **{
+    class *Vehicle **{
 
           constructor(name, model) {
                 this.name = name;
@@ -186,7 +186,7 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 
     **/*Creating Object*/**
 
-    ***let *car **= new Vehicle("Audi", "R8");
+    let *car **= new Vehicle("Audi", "R8");
     car.showModel();                   //method calling
 
     **/* Output: */
@@ -199,7 +199,7 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 *Lets see how to inherit a class from another class*
 ```js
     **/* Parent Class */**
-    ***class *ParentClass**
+    class *ParentClass**
     {
        constructor(properties){
          this.properties = properties;
@@ -211,7 +211,7 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 
     **/*Inheriting class*/**
 
-    ***class ***ChildClass ***extends ***ParentClass 
+    class ChildClass extends ParentClass 
     {
         constructor(properties, classSpecificProperties)
          {
@@ -230,13 +230,13 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 ```
 **Points to note:**
 
-* ***super()*** method is mandatory to call if we have declared a custom constructor for Child Class, else not required.
+* super() method is mandatory to call if we have declared a custom constructor for Child Class, else not required.
 
-* ***super ***is used to call Parent Class methods inside Child Class
+* super is used to call Parent Class methods inside Child Class
 
 * Child class will have access to all parent class methods.
 
-* ***this ***will always point to current object
+* this will always point to current object
 
 **Lets have a look at an example**
 ```js
@@ -262,14 +262,14 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 
     **/*Child Class inheriting parent class*/**
 
-    class FourWheelers ***extends ***Vehicle {
+    class FourWheelers extends Vehicle {
               constructor(name, model, noOfSeats) {
                       super(name, model);
                       this.noOfSeats = noOfSeats;
                   }
 
               showNoOfSeats() {
-                    console.log(***super***.getName() + ***super***.getModel() + "has " + this.noOfSeats + "seats");
+                    console.log(super.getName() + super.getModel() + "has " + this.noOfSeats + "seats");
 
               }
      }
@@ -282,39 +282,39 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 ```
 ## **Arrow functions**
 
-Arrow functions are a great feature introduced in ES6. We now have a cleaner and easy way to write functions and callback fucntions. One more benefit of arrow functions is that — ***this **always points to current objects in arrow functions.*
+Arrow functions are a great feature introduced in ES6. We now have a cleaner and easy way to write functions and callback fucntions. One more benefit of arrow functions is that — this **always points to current objects in arrow functions.*
 
 *Lets see how to declare arrow functions*
 ```js
-    ***/*If more than one parameters*/***
+    /*If more than one parameters*/
     name = (one, two) => {
           return one + two;
      }
 
-    ***/*If only receive one parameter*/***
+    /*If only receive one parameter*/
     name = parameter => {
           return parameter;
      }
 
-    ***/*If no parameter*/***
+    /*If no parameter*/
     name = () => {
           console.log('Hello World')
      }
 
-    ***/*If there is only a return statement, we can exclude {} and return*/***
+    /*If there is only a return statement, we can exclude {} and return*/
 
-    name = (one,two) => one + two;
+    name = (one,two) => one + two;```
 
 Lets have a look at an example
-
-    ***/*Simple function*/***
+```JS
+    /*Simple function*/
 
     function sum(value1,value2 ){
       return value1+value2;
 
     }
 
-    ***/*Arrow function*/***
+    /*Arrow function*/
 
     let sum =(value1,value2 ) => value1+value2 ;
 
@@ -322,8 +322,8 @@ Lets have a look at an example
     console.log(total);
 ```
     
-    ***Output:
-    11***
+    Output:
+    11
 
 Arrow functions are mostly used as callback functions and these are very efficient to use.
 
@@ -346,7 +346,7 @@ Arrow functions are mostly used as callback functions and these are very efficie
 ```
 **this in arrow functions**
 
-***this ***in arrow functions always inherits ***this ***object from the context in which the code is defined. We don’t need to do that = this or self = this or .bind(this) .
+this in arrow functions always inherits this object from the context in which the code is defined. We don’t need to do that = this or self = this or .bind(this) .
 ```js
     **/*With simple callback function*/**
     var self = this;
@@ -373,13 +373,13 @@ An array method *array.map()* will be useful to transform all array elements . T
     let newArray = array.map(arrayItem => arrayItem * arrayItem); *//multiplication for demo purpose, we can do any operation or use arrayItem to do other operations.*
 ```
 **Lets have an example**
-
+```js
     numbers = [1,2,4,5,6,7]
 
     **/*We need a new array with cubes of all these numbers*/**
 
     let cubeOfNumbers = numbers.map(number=>number*number*number); // 
-
+```
 ## Template Literals
 
 Template literals allow us to form a string template with ease. It allows us to put the JavaScript variables into a string using placeholders. We use `` back-tick operators to form a string and ${variableName} as a placeholder. Back-tick operator is the key before 1 on keyboard.
@@ -494,61 +494,66 @@ This is a great benefit of Modules as explained below:
 Now thinking, then how to access variables of one module in another module. *eh..?*
 >  If we want to use the variables in different modules, we have to explicitly export variables, methods to make them public.
 
-We use the ***export ***keyword before class and variables to make them available for other modules. The ***import ***keyword is used to import variables or classes from other modules
+We use the export keyword before class and variables to make them available for other modules. The import keyword is used to import variables or classes from other modules
 
 Export: export const variableName or export class ClassName{}
 
 Import: import {exportedObject} from ‘filePath’
 
-Lets have an example of code in which we create a ***Classes Inheritance*** section***. ***In that section we have done all the code in a single file. Now we will split our code into different modules(files).
+Lets have an example of code in which we create a Classes Inheritance section. In that section we have done all the code in a single file. Now we will split our code into different modules(files).
 ```js
-    ***/*file : vehicle.js*/***
+    /*file : vehicle.js*/
+export class Vehicle { //Class exported for other modules
 
-    ***export ***class Vehicle {       //Class exported for other modules
+	constructor(name, model) {
+		this.name = name;
+		this.model = model;
+	}
 
-    constructor(name, model) {
-                   this.name = name;
-                   this.model = model;
-                 }
+	showModel() {
+		console.log(this.model);
+	}
 
-    showModel() {
-                  console.log(this.model);
-               }
+	getModel() {
+		return this.model;
+	}
+	getName() {
+		return this.name;
+	}
+}
 
-    getModel() {
-                   return this.model;
-               }
-            getName() {
-                   return this.name;
-                }
-     }
+**
+/*File: fourWheelers.js*/ **
 
-    **/*File: fourWheelers.js*/**
+import {
+	Vehicle
+} from './vehicle.js'
+//Vehicle class imported because we will inherit class from this class
 
-    ***import {Vehicle} from './vehicle.js'***
-    //Vehicle class imported because we will inherit class from this class
+export class FourWheelers extends Vehicle {
+	constructor(name, model, noOfSeats) {
+		super(name, model);
+		this.noOfSeats = noOfSeats;
+	}
 
-    ***export ***class FourWheelers extends Vehicle {
-              constructor(name, model, noOfSeats) {
-                      super(name, model);
-                      this.noOfSeats = noOfSeats;
-                  }
+	showNoOfSeats() {
+		console.log(super.getName() + super.getModel() + "has " + this.noOfSeats + "seats");
 
-    showNoOfSeats() {
-                    console.log(super.getName() + super.getModel() + "has " + this.noOfSeats + "seats");
+	}
+}
 
-      }
-     }
+**
+/*program.js*/ **
 
-    **/*program.js*/**
+import {
+	FourWheelers
+} from './fourWheelers.js'
+//FourWheelers class imported because we will create object of this class in this module
 
-    ***import {FourWheelers} from './fourWheelers.js'***
-    //FourWheelers class imported because we will create object of this class in this module
-
-    let myCar = new FourWheelers("Audi", "R8", 5);
-    myCar.showNoOfSeats();
+let myCar = new FourWheelers("Audi", "R8", 5);
+myCar.showNoOfSeats();
 ```
-***There are lot more features introduced and improved in ES6 like:***
+There are lot more features introduced and improved in ES6 like:
 
 * New Math, Object Methodes,
 
@@ -567,18 +572,3 @@ For the sake of modularity (pun intended), I will cover them in the next article
 Thank you for reading. If you feel, this article can help someone to understand some important features, feel free to comment below 😃
 
 ### **Happy JavaScripting**
-
-```jsx
-import React from "react"
-import ReactDOM from "react-dom"
-
-const name = "Brian" // highlight-line
-
-ReactDOM.render(
-  <div>
-    {/* highlight-range{1-3} */}
-    <h1>Hello, ${name}!</h1>
-  </div>,
-  document.getElementById("root")
-)
-```
