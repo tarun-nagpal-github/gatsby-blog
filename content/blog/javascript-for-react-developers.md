@@ -7,6 +7,8 @@ keywords: ['react', 'javascript', 'javascript for react developers']
 # slug: /@tarunnagpal78/asynchronous-javascript-and-event-loop-d59c7e4b9fdd
 ---
 
+![JavaScript basics for React developers](img\basics.jpg)
+JavaScript basics for React developers
 
 As we are using new frameworks like React/Vue/Angular, it is very important to understand some of the basics of JavaScript.
 
