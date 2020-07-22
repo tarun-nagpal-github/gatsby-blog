@@ -42,7 +42,7 @@ All three keywords are used to declare a variable. So what is the difference ? L
 ***const — ***Used to declare variables but variables can’t be reassigned. Declared variables are i̶m̶m̶u̶t̶a̶b̶l̶e̶ (*check edit ahead*) . const variables are also block scoped.
 
 ***Lets see in example***
-
+```js
     ***/*Using var to declare variables*/***
 
     function usingVar(){
@@ -114,7 +114,7 @@ All three keywords are used to declare a variable. So what is the difference ? L
     }
 
     usingAll();
-
+```
     **Output:**
 
     Shergill
@@ -126,19 +126,19 @@ All three keywords are used to declare a variable. So what is the difference ? L
 So, we should use let over var to not pollute other blocks. But it needs to be used with care, because sometimes we need variables outside the blocks, too.We have a habit to declare with ***var ***which serves the purposes outside block but*** let ***won’t***.***
 
 **const **is also very useful to avoid mistakenly re-assigning of constant variables. It will throw an error but won’t re-assign a variable.
-
+```js
     const numbers = [1,2,3];*** 
     ***numbers.push(4);    //is totally fine.
 
     /* But we can’t point to new array */
     numbers = [1,2,3,4];  //ERROR. We can't point to new array address.
-
+```
 ## Classes
 
 This is a great feature in ES6. Before ES6 there were workarounds to use OOP concepts but there was no class keyword to create classes. Now classes have been introduced in ES6, and it becomes very easy to create the same kind of objects from a class blue print.
 
 **Lets see how to create a class and create objects from a class**
-
+```js
     ***/*Defining Class*/***
 
     ***class *ClassName **{
@@ -158,7 +158,7 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
     ***/* Creating objects from class */***
 
     **let objName = new ClassName(propertyValue);**
-
+```
 **Points to note:**
 
 * ***function ***keyword is not used to declare functions. We don’t need to have the word function for declaring methods.
@@ -170,7 +170,7 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 * ***this ***will always point to the current object
 
 **Lets have a look at an example**
-
+```js
     **/*Class*/**
     ***class *Vehicle **{
 
@@ -191,13 +191,13 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 
     **/* Output: */
     **Model of Audi is: R8
-
+```
 ## Inheritance
 
 Inheritance is the mechanism of creating a new class(child class) from another class (parent class). Inherited class inherits all the methods of parent class.
 
 *Lets see how to inherit a class from another class*
-
+```js
     **/* Parent Class */**
     ***class *ParentClass**
     {
@@ -227,7 +227,7 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 
     childClassObject.methods();
     childClassObject.classSpecificeMethods();
-
+```
 **Points to note:**
 
 * ***super()*** method is mandatory to call if we have declared a custom constructor for Child Class, else not required.
@@ -239,7 +239,7 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 * ***this ***will always point to current object
 
 **Lets have a look at an example**
-
+```js
     **/*Parent Class*/**
     class Vehicle {
 
@@ -279,13 +279,13 @@ Inheritance is the mechanism of creating a new class(child class) from another c
     let myCar = new FourWheelers("Audi", "R8", 5);
     myCar.showNoOfSeats();          // Child Class method
     myCar.showModel();              // Parent class method
-
+```
 ## **Arrow functions**
 
 Arrow functions are a great feature introduced in ES6. We now have a cleaner and easy way to write functions and callback fucntions. One more benefit of arrow functions is that — ***this **always points to current objects in arrow functions.*
 
 *Lets see how to declare arrow functions*
-
+```js
     ***/*If more than one parameters*/***
     name = (one, two) => {
           return one + two;
@@ -320,7 +320,7 @@ Lets have a look at an example
 
     var total = sum(5,6);
     console.log(total);
-
+```
     
     ***Output:
     11***
@@ -328,7 +328,7 @@ Lets have a look at an example
 Arrow functions are mostly used as callback functions and these are very efficient to use.
 
 **Lets look at an example**
-
+```js
     var employees = [
            {id:1 ,isMale: true},
            {id:1 ,isMale: true},
@@ -343,11 +343,11 @@ Arrow functions are mostly used as callback functions and these are very efficie
 
     **/*Using arrow function*/
     **let maleEmployees **= **employees.filter(emp => emp.isMale);
-
+```
 **this in arrow functions**
 
 ***this ***in arrow functions always inherits ***this ***object from the context in which the code is defined. We don’t need to do that = this or self = this or .bind(this) .
-
+```js
     **/*With simple callback function*/**
     var self = this;
      $('.btn').click(function(event){
@@ -358,11 +358,11 @@ Arrow functions are mostly used as callback functions and these are very efficie
      $('.btn').click((event)=>{
        this.anyMethod() 
     })
-
+```
 ## Array.map()
 
 An array method *array.map()* will be useful to transform all array elements . This method doesn’t modify the original array. It returns a new array.
-
+```js
     let newArray = array.map(function(arrayItem){
          // any operation on arrayItem
            return modifiedItem;
@@ -371,7 +371,7 @@ An array method *array.map()* will be useful to transform all array elements . T
     **/*Using Arrow function for callback function*/**
 
     let newArray = array.map(arrayItem => arrayItem * arrayItem); *//multiplication for demo purpose, we can do any operation or use arrayItem to do other operations.*
-
+```
 **Lets have an example**
 
     numbers = [1,2,4,5,6,7]
@@ -385,7 +385,7 @@ An array method *array.map()* will be useful to transform all array elements . T
 Template literals allow us to form a string template with ease. It allows us to put the JavaScript variables into a string using placeholders. We use `` back-tick operators to form a string and ${variableName} as a placeholder. Back-tick operator is the key before 1 on keyboard.
 
 Lets have an example
-
+```js
     let name='Gurinder';
     let age= 25;**
     **let info= "My name is "+ name +" and age is "+ age +" years";
@@ -397,11 +397,11 @@ Lets have an example
     **let info= `My name is ${name} and age is ${age} years`
 
     /*This is so easy to use and is more readable when large string templates are created.*/
-
+```
 ## Multi-line Strings
 
 We can use back-tick operators to form multi-line strings. Just put ` operator before and after the string.
-
+```js
     **/*Without using `` */**
     var demoString = 'First line of demo string,\n\t'     
     + 'Second line of demo string.\n\t'     
@@ -413,13 +413,13 @@ We can use back-tick operators to form multi-line strings. Just put ` operator b
                     Second line of demo string.
                     Third line of demo string,
                     Fourth line of demo string.`
-
+```
 ## **Object Destructuring**
 
 Object destructuring is used to get property values from objects easily. Before ES6 we had to write *n* number of lines if we want to extract *n properties. *But now with object destructuring we can do it with ease.
 
 Lets have and example
-
+```js
     var person = {
          name : 'Gurinder',
          age : 25,
@@ -436,13 +436,13 @@ Lets have and example
     var {name, age, website} = person;**      // this will create 3 variables and extract information from person object and will assign to variables.
 
     var {name:nm, website:web} = person     // if we want to use another name for variables other than object keys,we can use ":" to give alias name. 
-
+```
 ## Spread Operator
 
 The spread operator is represented by … three dots. Spread operator is used to extract all array items or object properties. To create objects we use {…} and to create arrays we use […]
 
 **Lets have an example**
-
+```js
     **/*Object Cloning using spread operator*/
     **var person = {
          name : 'Gurinder',
@@ -481,7 +481,7 @@ The spread operator is represented by … three dots. Spread operator is used to
     var moreNumbers = [5,6,7,8];
     var allNumbers = [...numbers,4,...moreNumbers];
     //This will create a new array by combining.
-
+```
 ## Modules
 
 Modules means dividing our code in different files for reusability and better maintainability. A module can be referred as a single JavaScript file.
@@ -501,7 +501,7 @@ Export: export const variableName or export class ClassName{}
 Import: import {exportedObject} from ‘filePath’
 
 Lets have an example of code in which we create a ***Classes Inheritance*** section***. ***In that section we have done all the code in a single file. Now we will split our code into different modules(files).
-
+```js
     ***/*file : vehicle.js*/***
 
     ***export ***class Vehicle {       //Class exported for other modules
@@ -547,7 +547,7 @@ Lets have an example of code in which we create a ***Classes Inheritance*** sect
 
     let myCar = new FourWheelers("Audi", "R8", 5);
     myCar.showNoOfSeats();
-
+```
 ***There are lot more features introduced and improved in ES6 like:***
 
 * New Math, Object Methodes,
