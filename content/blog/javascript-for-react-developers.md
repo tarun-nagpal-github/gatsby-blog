@@ -32,7 +32,7 @@ Gurinder SherGill - He is expert in JavaScript and tries to share whatever he ca
 
 How do we declare a variable in JS ?
 
-using **var**? Yes, but now we have two more keywords — let and const.
+using var? Yes, but now we have two more keywords — let and const.
 >  var vs let vs const
 
 All three keywords are used to declare a variable. So what is the difference ? Lets see
@@ -46,7 +46,6 @@ const — Used to declare variables but variables can’t be reassigned. Declare
 Lets see in example
 ```js
     /*Using var to declare variables*/
-
     function usingVar(){
          for(var i=0;i<2;i++){                     // var declaration
              console.log('In loop: '+ i);
@@ -55,7 +54,7 @@ Lets see in example
     }
     usingVar();
 
-    **Output**:
+    Output:
     In loop: 0
     In loop: 1
     After loop: 2
@@ -71,10 +70,10 @@ Lets see in example
     }
     usingLet();
 
-    **Output**:
+    Output:
     In loop: 0
     In loop: 1
-    **Uncaught ReferenceError: i is not defined ** 
+    Uncaught ReferenceError: i is not defined  
     */* i is not available outside 'for' block because it is declared using let keyword*/*
 
     /*Using const to declare variables*/
@@ -87,23 +86,23 @@ Lets see in example
     }
     usingConst();
 
-    **Output**:
+    Output:
     3.14
-    **Uncaught TypeError: Assignment to constant variable
+    Uncaught TypeError: Assignment to constant variable
     /* because we are try to re-assign pie which is declared using const */
     *
 
     /*Using all types of keywords to declare variables*/
 
     function usingAll() {
-       const *myName **= "Gurinder";
-       var *myWebsite **= "medium.com";
+       const *myName = "Gurinder";
+       var *myWebsite = "medium.com";
            {                             //creating blocks for demo
-              const *myName **= "Shergill";
+              const *myName = "Shergill";
               console.log(myName);
-              let **myWebsite** = "webegic.com"; 
+              let myWebsite = "webegic.com"; 
                    {
-                      let *myWebsite **= "gurindershergill.in";
+                      let *myWebsite = "gurindershergill.in";
                       console.log(myWebsite);
                     }
                console.log(myWebsite);
@@ -111,13 +110,13 @@ Lets see in example
 
       console.log(myName);
       console.log(myWebsite);
-    //  **myName **= 'Gurinder Shergill';     //can't do this, myName is already declared in this block. It is read only now
+    //  myName = 'Gurinder Shergill';     //can't do this, myName is already declared in this block. It is read only now
     
     }
 
     usingAll();
 ```
-    **Output:**
+    Output:
 
     Shergill
     gurindershergill.in
@@ -127,7 +126,7 @@ Lets see in example
 
 So, we should use let over var to not pollute other blocks. But it needs to be used with care, because sometimes we need variables outside the blocks, too.We have a habit to declare with var which serves the purposes outside block but let won’t.
 
-**const **is also very useful to avoid mistakenly re-assigning of constant variables. It will throw an error but won’t re-assign a variable.
+const is also very useful to avoid mistakenly re-assigning of constant variables. It will throw an error but won’t re-assign a variable.
 ```js
     const numbers = [1,2,3]; 
     numbers.push(4);    //is totally fine.
@@ -139,29 +138,21 @@ So, we should use let over var to not pollute other blocks. But it needs to be u
 
 This is a great feature in ES6. Before ES6 there were workarounds to use OOP concepts but there was no class keyword to create classes. Now classes have been introduced in ES6, and it becomes very easy to create the same kind of objects from a class blue print.
 
-**Lets see how to create a class and create objects from a class**
+Lets see how to create a class and create objects from a class
 ```js
     /*Defining Class*/
-
-    class *ClassName **{
-
-            constructor(propertyValue){
-               this.property = propertyValue;
-            }
-
+    class *ClassName {
+        constructor(propertyValue){
+            this.property = propertyValue;
+        }
          functionName(){
-
                // function body
-
-            }
-
+         }
     }
-
     /* Creating objects from class */
-
-    **let objName = new ClassName(propertyValue);**
+    let objName = new ClassName(propertyValue);
 ```
-**Points to note:**
+Points to note:
 
 * function keyword is not used to declare functions. We don’t need to have the word function for declaring methods.
 
@@ -171,10 +162,10 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
 
 * this will always point to the current object
 
-**Lets have a look at an example**
+Lets have a look at an example
 ```js
-    **/*Class*/**
-    class *Vehicle **{
+    /*Class*/
+    class *Vehicle {
 
           constructor(name, model) {
                 this.name = name;
@@ -182,17 +173,17 @@ This is a great feature in ES6. Before ES6 there were workarounds to use OOP con
           }
         
           showModel() {
-                 console.log("Model of " + this.name + " is: " +          this.model);
+                 console.log("Model of " + this.name + " is: " +this.model);
            }
     }
 
-    **/*Creating Object*/**
+    /*Creating Object*/
 
-    let *car **= new Vehicle("Audi", "R8");
+    let *car = new Vehicle("Audi", "R8");
     car.showModel();                   //method calling
 
-    **/* Output: */
-    **Model of Audi is: R8
+    /* Output: */
+    Model of Audi is: R8
 ```
 ## Inheritance
 
@@ -200,18 +191,20 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 
 *Lets see how to inherit a class from another class*
 ```js
-    **/* Parent Class */**
-    class *ParentClass**
+    /* Parent Class */
+    class *ParentClass
     {
        constructor(properties){
          this.properties = properties;
          }
-       getMothod(){return this.properties};
+       getMethod(){
+           return this.properties;
+       };
        methods(){}
     }
     
 
-    **/*Inheriting class*/**
+    /*Inheriting class*/
 
     class ChildClass extends ParentClass 
     {
@@ -230,7 +223,7 @@ Inheritance is the mechanism of creating a new class(child class) from another c
     childClassObject.methods();
     childClassObject.classSpecificeMethods();
 ```
-**Points to note:**
+Points to note:
 
 * super() method is mandatory to call if we have declared a custom constructor for Child Class, else not required.
 
@@ -240,20 +233,18 @@ Inheritance is the mechanism of creating a new class(child class) from another c
 
 * this will always point to current object
 
-**Lets have a look at an example**
+Lets have a look at an example
 ```js
-    **/*Parent Class*/**
+    /*Parent Class*/
     class Vehicle {
 
          constructor(name, model) {
                    this.name = name;
                    this.model = model;
                  }
-
            showModel() {
                   console.log(this.model);
                }
-
             getModel() {
                    return this.model;
                }
@@ -262,29 +253,28 @@ Inheritance is the mechanism of creating a new class(child class) from another c
                 }
      }
 
-    **/*Child Class inheriting parent class*/**
+    /*Child Class inheriting parent class*/
 
     class FourWheelers extends Vehicle {
               constructor(name, model, noOfSeats) {
                       super(name, model);
                       this.noOfSeats = noOfSeats;
                   }
-
               showNoOfSeats() {
                     console.log(super.getName() + super.getModel() + "has " + this.noOfSeats + "seats");
 
               }
      }
 
-    **/*Creating Child class object*/**
+    /*Creating Child class object*/
 
     let myCar = new FourWheelers("Audi", "R8", 5);
     myCar.showNoOfSeats();          // Child Class method
     myCar.showModel();              // Parent class method
 ```
-## **Arrow functions**
+## Arrow functions
 
-Arrow functions are a great feature introduced in ES6. We now have a cleaner and easy way to write functions and callback fucntions. One more benefit of arrow functions is that — this **always points to current objects in arrow functions.*
+Arrow functions are a great feature introduced in ES6. We now have a cleaner and easy way to write functions and callback fucntions. One more benefit of arrow functions is that — this always points to current objects in arrow functions.*
 
 *Lets see how to declare arrow functions*
 ```js
@@ -304,32 +294,27 @@ Arrow functions are a great feature introduced in ES6. We now have a cleaner and
      }
 
     /*If there is only a return statement, we can exclude {} and return*/
-
-    name = (one,two) => one + two;```
-
-Lets have a look at an example
-```JS
-    /*Simple function*/
-
-    function sum(value1,value2 ){
-      return value1+value2;
-
-    }
-
-    /*Arrow function*/
-
-    let sum =(value1,value2 ) => value1+value2 ;
-
-    var total = sum(5,6);
-    console.log(total);
+    name = (one,two) => one + two; 
 ```
-    
-    Output:
-    11
+Lets have a look at an example
+ ```JS
+/*Simple function*/
+function sum(value1, value2) {
+	return value1 + value2;
+}
 
+/*Arrow function*/
+let sum = (value1, value2) => value1 + value2;
+var total = sum(5, 6);
+console.log(total);
+
+
+Output:
+	11
+```
 Arrow functions are mostly used as callback functions and these are very efficient to use.
 
-**Lets look at an example**
+Lets look at an example
 ```js
     var employees = [
            {id:1 ,isMale: true},
@@ -337,26 +322,24 @@ Arrow functions are mostly used as callback functions and these are very efficie
            {id:1 ,isMale: fasle},
            {id:1 ,isMale: true}
     ]
+    /*We need to get male employees only*/
+    /*Using simple fucntion*/
+    let maleEmployees = employees.filter(function(emp){return emp.isMale});
 
-    **/*We need to get male employees only*/**
-
-    **/*Using simple fucntion*/
-    **let maleEmployees **= **employees.filter(function(emp){return emp.isMale});
-
-    **/*Using arrow function*/
-    **let maleEmployees **= **employees.filter(emp => emp.isMale);
+    /*Using arrow function*/
+    let maleEmployees = employees.filter(emp => emp.isMale);
 ```
-**this in arrow functions**
+this in arrow functions
 
 this in arrow functions always inherits this object from the context in which the code is defined. We don’t need to do that = this or self = this or .bind(this) .
 ```js
-    **/*With simple callback function*/**
+    /*With simple callback function*/
     var self = this;
      $('.btn').click(function(event){
        self.anyMethod() 
     })
 
-    **/*With arrow functions as callback function*/**
+    /*With arrow functions as callback function*/
      $('.btn').click((event)=>{
        this.anyMethod() 
     })
@@ -369,17 +352,13 @@ An array method *array.map()* will be useful to transform all array elements . T
          // any operation on arrayItem
            return modifiedItem;
     }) 
-
-    **/*Using Arrow function for callback function*/**
-
+    /*Using Arrow function for callback function*/
     let newArray = array.map(arrayItem => arrayItem * arrayItem); *//multiplication for demo purpose, we can do any operation or use arrayItem to do other operations.*
 ```
-**Lets have an example**
+Lets have an example
 ```js
     numbers = [1,2,4,5,6,7]
-
-    **/*We need a new array with cubes of all these numbers*/**
-
+    /*We need a new array with cubes of all these numbers*/
     let cubeOfNumbers = numbers.map(number=>number*number*number); // 
 ```
 ## Template Literals
@@ -389,14 +368,13 @@ Template literals allow us to form a string template with ease. It allows us to 
 Lets have an example
 ```js
     let name='Gurinder';
-    let age= 25;**
-    **let info= "My name is "+ name +" and age is "+ age +" years";
+    let age= 25;
+    let info= "My name is "+ name +" and age is "+ age +" years";
 
-    **/*Using template literals*/**
-
+    /*Using template literals*/
     let name='Gurinder';
-    let age= 25;**
-    **let info= `My name is ${name} and age is ${age} years`
+    let age= 25;
+    let info= `My name is ${name} and age is ${age} years`
 
     /*This is so easy to use and is more readable when large string templates are created.*/
 ```
@@ -404,19 +382,19 @@ Lets have an example
 
 We can use back-tick operators to form multi-line strings. Just put ` operator before and after the string.
 ```js
-    **/*Without using `` */**
+    /*Without using `` */
     var demoString = 'First line of demo string,\n\t'     
     + 'Second line of demo string.\n\t'     
     + 'Third line of demo string,\n\t'     
     + 'Fourth line of demo string.\n\t'
 
-    **/*Using `` */**
+    /*Using `` */
     var roadPoem = `First line of demo string,
                     Second line of demo string.
                     Third line of demo string,
                     Fourth line of demo string.`
 ```
-## **Object Destructuring**
+## Object Destructuring
 
 Object destructuring is used to get property values from objects easily. Before ES6 we had to write *n* number of lines if we want to extract *n properties. *But now with object destructuring we can do it with ease.
 
@@ -428,14 +406,14 @@ Lets have and example
          website: 'gurindershergill.in'
     }
 
-    **/*If we need to extract info of person object to variables
-    Without Object Destructuring*/**
+    /*If we need to extract info of person object to variables
+    Without Object Destructuring*/
     var name = person.name;
     var age= person.age;
     var website = person.website;
 
-    **/*Using Object Destructuring*/
-    var {name, age, website} = person;**      // this will create 3 variables and extract information from person object and will assign to variables.
+    /*Using Object Destructuring*/
+    var {name, age, website} = person;      // this will create 3 variables and extract information from person object and will assign to variables.
 
     var {name:nm, website:web} = person     // if we want to use another name for variables other than object keys,we can use ":" to give alias name. 
 ```
@@ -443,10 +421,10 @@ Lets have and example
 
 The spread operator is represented by … three dots. Spread operator is used to extract all array items or object properties. To create objects we use {…} and to create arrays we use […]
 
-**Lets have an example**
+Lets have an example
 ```js
-    **/*Object Cloning using spread operator*/
-    **var person = {
+    /*Object Cloning using spread operator*/
+    var person = {
          name : 'Gurinder',
          age : 25,
          website: 'gurindershergill.in'
@@ -454,13 +432,13 @@ The spread operator is represented by … three dots. Spread operator is used to
 
     var anotherPerson = {...person}    //Object clone, as simple as that
 
-    **/*Array Cloning using spread operator*/
-    **var numbers = [1,2,3,4,5,6,7,8]
+    /*Array Cloning using spread operator*/
+    var numbers = [1,2,3,4,5,6,7,8]
 
-    var anotherNumbers = [...numbers] ** ** // Array cloned
+    var anotherNumbers = [...numbers]   // Array cloned
 
-    **/*Combining Objects*/
-    /*We can easily combine multiples object and can also add more properties using spread operator*/**
+    /*Combining Objects*/
+    /*We can easily combine multiples object and can also add more properties using spread operator*/
 
     var person = {
          name : 'Gurinder',
@@ -476,8 +454,8 @@ The spread operator is represented by … three dots. Spread operator is used to
     var fullInfo = {...person,...university, company:'Nagarro'};
     //This will create a new object by combining.
 
-    **/*Combining Arrays*/
-    /*We can easily combine multiples arrays and can also add more items using spread operator*/**
+    /*Combining Arrays*/
+    /*We can easily combine multiples arrays and can also add more items using spread operator*/
 
     var numbers = [1,2,3];
     var moreNumbers = [5,6,7,8];
@@ -524,8 +502,8 @@ export class Vehicle { //Class exported for other modules
 	}
 }
 
-**
-/*File: fourWheelers.js*/ **
+
+/*File: fourWheelers.js*/ 
 
 import {
 	Vehicle
@@ -544,8 +522,8 @@ export class FourWheelers extends Vehicle {
 	}
 }
 
-**
-/*program.js*/ **
+
+/*program.js*/ 
 
 import {
 	FourWheelers
@@ -573,4 +551,4 @@ For the sake of modularity (pun intended), I will cover them in the next article
 
 Thank you for reading. If you feel, this article can help someone to understand some important features, feel free to comment below 😃
 
-### **Happy JavaScripting**
+### Happy JavaScripting
