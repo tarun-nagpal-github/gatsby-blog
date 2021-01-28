@@ -6,9 +6,7 @@ tags: ["javascript",  "beginners", "inheritance", "prototypeInJavascript"]
 //cover_image: https://direct_url_to_image.jpg
 ---
 
-I have recently gone through some of the roots in JavaScript. It always fruitful when you look back to the basics of any Language. No matter you are an expert in [React and Redux](https://www.realmelon.com/react-redux-how-to-add-redux-into-create-react-app/)
-
-###### You can also check out my blog on [JavaScript basics for React developers](https://www.realmelon.com/javascript-for-react-developers/)
+I have recently gone through some of the roots in JavaScript. It always fruitful when you look back to the basics of any Language.  
 
 There were a couple of questions in my Mind like 
 
