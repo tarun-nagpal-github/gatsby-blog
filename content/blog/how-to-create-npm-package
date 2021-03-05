@@ -1,0 +1,49 @@
+---
+title: How to create an NPM Package in 5 minutes
+published: true
+description: Npm Packages are a vital thing when using javascript code from other developers. We will learn how to create and use it quickly
+tags:  javascript, npm
+---
+What is NPM 
+It is a package manager for the JavaScript programming language. This is the world's largest Software Registry.
+
+Step 1 - Create an npm project 
+ 1.1 Create a folder named "my_demo_calculator" 
+```mkdir my_demo_calculator```
+
+1.2 Create an npm project 
+``` npm init -y ``` 
+It will turn your project folder into an npm package 
+
+1.3 Create a file named "index.js" and add the following code to it. 
+```
+function add(x,y){
+    return x+y;
+}
+function sub(x,y){
+    return x-y;
+}
+function mul(x,y){
+    return x*y;
+}
+function divide(x,y){
+    return x/y;
+}
+
+module.exports = {add,sub,mul,divide}
+```
+1.3 (Optional) Create a README.md file and add it to the folder 
+
+1.4 Login into the NPM Registry. You need to create an account on npmjs.com and use the same here
+
+```npm login```
+
+1.5 Publish the Package with the following command 
+```npm publish```
+
+That's It :) 
+
+You can see my sample package on the links below 
+
+https://www.npmjs.com/package/demo_npm_package_devtalks 
+  
