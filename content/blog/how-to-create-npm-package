@@ -1,8 +1,9 @@
 ---
 title: How to create an NPM Package in 5 minutes
 published: true
-description: Npm Packages are a vital thing when using javascript code from other developers. We will learn how to create and use it quickly
-tags:  javascript, npm
+description: 'Npm Packages are a vital thing when using javascript code from other developers. We will learn how to create and use it quickly'
+categories: ['npn',   'javascript']
+keywords: ['npm', 'javascript', 'module']
 ---
 What is NPM 
 It is a package manager for the JavaScript programming language. This is the world's largest Software Registry.
